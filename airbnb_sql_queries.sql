@@ -107,21 +107,21 @@ FROM great_listings gl
 ORDER BY annual_rev DESC;
 
 
---Question 2: Which city has the most great listings?
+--Question 2: Which city has the most top-earners and the highest annual average revenue?
 SELECT city,count(*) AS number_of_listings, ROUND(AVG(annual_rev)::numeric, 2) AS average_annual_revenue
 FROM great_listings gl 
 GROUP BY city
 ORDER BY number_of_listings DESC;
 
---What is the average guest rating great listing recieve?:
-SELECT AVG(rating)
+--What is the average guest rating top-earners recieve and average occupancy rate?:
+SELECT ROUND(AVG(rating)::NUMERIC,2) AS avg_rating, Round(AVG((nights_booked/365) *100)::NUMERIC,2) AS avg_occupany_rate
 FROM great_listings gl;
 
-
---What is the average occupancy rate for great listings?
-SELECT AVG((nights_booked/365) *100) AS occupany_rate
+--Occupancy rate by county, city 
+SELECT  county, city,Round(AVG((nights_booked/365) *100)::NUMERIC,2) AS avg_occupany_rate
 FROM great_listings gl 
-ORDER BY occupany_rate DESC;
+GROUP BY county, city
+ORDER BY avg_occupany_rate DESC; 
 
 -- What is the distribution of great listings by bedrooms?
 SELECT bedrooms,COUNT(*) AS number_of_listings
