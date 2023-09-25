@@ -2,6 +2,8 @@
 
 This project analyzes Airbnb data from New Brunswick, Canada, with the goal of profiling top-earning property listings to assist new investors in maximizing rental revenue and profitability. The analysis encompasses data cleaning, preprocessing, annual revenue calculation, identification of high-performing listings, and exploration of key factors contributing to property success. 
 
+<img src="analysis_images_readme\Dashboard.png" width="400" />
+
 Tableau Dashboard: [Link](https://public.tableau.com/views/AirbnbTopEarners_16946383448580/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 ## Technologies Used
 - Python
